@@ -1,0 +1,36 @@
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+Accept: application/json
+Content-Length: 127
+User-Agent: IntelliJ HTTP Client/PhpStorm 2025.1.5.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+
+{
+    "name": "John Smith",
+    "email": "johnsmith2001it@gmail.com",
+    "password": "1106",
+    "password_confirmation": ""
+}
+
+<> 2025-09-06T151109.422.json
+
+###
+
+POST http://127.0.0.1:8000/api/v1/register
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/PhpStorm 2025.1.5.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 127
+
+{
+    "name": "John Smith",
+    "email": "johnsmith2001it@gmail.com",
+    "password": "1106",
+    "password_confirmation": ""
+}
+
+<> 2025-09-06T151037.200.html
+
+###
+
