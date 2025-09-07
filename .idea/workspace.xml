@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1667773b-9ccd-43a5-a280-700d20bee859" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+    <list default="true" id="1667773b-9ccd-43a5-a280-700d20bee859" name="Changes" comment="Create Authentication APIs">
+      <change afterPath="$PROJECT_DIR$/frontend/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/auth/apis/keys.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/auth/apis/queries.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/auth/page/Register.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/features/auth/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/apis/http.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/components/form-control/InputField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/components/form-control/PasswordField.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/components/form-control/SubmitButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/functions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/shared/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +30,14 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,30 +52,45 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="326RoHHtA2laeqvXFbyiovauuMk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.laravel | api/v1/register.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "laravel_idea.dialogs.route_server_address_settings.width": "563",
-    "laravel_idea.dialogs.route_server_address_settings.x": "486",
-    "laravel_idea.dialogs.route_server_address_settings.y": "318",
-    "laravel_routing.server_address": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "LaravelIdea.CodeGeneration",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.laravel | api/v1/register.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;laravel_idea.dialogs.route_server_address_settings.width&quot;: &quot;563&quot;,
+    &quot;laravel_idea.dialogs.route_server_address_settings.x&quot;: &quot;486&quot;,
+    &quot;laravel_idea.dialogs.route_server_address_settings.y&quot;: &quot;318&quot;,
+    &quot;laravel_routing.server_address&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\ASUS\\.bun\\install\\global\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.emmet.xml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\ASUS\\Desktop\\workspace\\laravel\\expense_tracker\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="RunManager" selected="PHPUnit.Main">
     <configuration name="laravel | api/v1/register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/laravel.http" executionIdentifier="api/v1/register" runType="Run single request">
       <method v="2" />
@@ -93,12 +126,30 @@
       <workItem from="1756765194963" duration="1720000" />
       <workItem from="1756788991920" duration="2764000" />
       <workItem from="1757145370456" duration="378000" />
-      <workItem from="1757145787458" duration="2231000" />
+      <workItem from="1757145787458" duration="6592000" />
+      <workItem from="1757220707709" duration="180000" />
+      <workItem from="1757221031288" duration="4003000" />
+      <workItem from="1757225187768" duration="6593000" />
+      <workItem from="1757235742194" duration="667000" />
+      <workItem from="1757248999510" duration="6943000" />
     </task>
+    <task id="LOCAL-00001" summary="Create Authentication APIs">
+      <option name="closed" value="true" />
+      <created>1757148117754</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757148117754</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create Authentication APIs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Authentication APIs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
